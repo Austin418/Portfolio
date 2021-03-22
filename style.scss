@@ -1,0 +1,385 @@
+$font: "Bree Serif", serif;
+$color: #f2aa4cff;
+$purple: rgb(145, 5, 209);
+// ;
+
+// $color: #e94b3cff;
+// $purple: #2d2926ff;
+
+$background: rgb(0, 0, 0);
+// #040404
+// rgb(242, 87, 76)
+$text: rgb(255, 255, 255);
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Bree Serif", serif;
+    background-color: $background;
+    color: $text;
+    position: relative;
+    background: transparent;
+    &::before {
+        content: "";
+        position: fixed;
+        background: $background top right no-repeat; //can place url of image
+        background-size: cover;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        z-index: -1;
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+#landing {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../media/pexels-anni-roenkae-2832382num2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    &::before {
+        content: "";
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .landing-container {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 15px;
+    }
+    h1 {
+        margin: 0 0 10px 0;
+        font-size: 64px;
+        font-family: $font;
+        color: white;
+    }
+
+    h2 {
+        color: $color;
+        margin-bottom: 50px;
+        font-size: 18px;
+        font-weight: 500px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-items: space-around;
+    }
+
+    i.bx {
+        display: flex;
+    }
+
+    .btn-scroll {
+        border-radius: 5px;
+        display: flex;
+        margin: 10px;
+        transition: 0.5s;
+        color: grey;
+        text-decoration: none;
+        animation: up-down 1s ease-in-out infinite alternate-reverse both;
+        i {
+            font-size: 48px;
+            &:hover {
+                color: $color;
+                font-weight: 450;
+                transition: all 0.5s ease-out;
+            }
+        }
+    }
+    .pfpContainer {
+        display: flex;
+        margin-bottom: 30px;
+        background-color: white; 
+        padding: 20px;
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        align-items: center;
+        
+        justify-content: center;
+
+        .pfp {
+            border: rgb(255, 255, 255) 10px solid;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+
+        }
+    }
+}
+
+.skills {
+    padding-top: 50px;
+    .progress {
+        height: 60px;
+        display: block;
+        background: none;
+        border-radius: 0;
+
+        .skill {
+            padding: 10px 0;
+            margin: 0;
+            text-transform: uppercase;
+            display: block;
+            font-weight: 500;
+            font-family: $font;
+            color: $text;
+
+            .val {
+                float: right;
+                font-style: normal;
+            }
+        }
+    }
+    .progress-bar-wrap {
+        background: $purple;
+    }
+    .progress-bar {
+        height: 10px;
+        transition: 0.9s;
+        background-color: $color;
+        border-radius: 0 4px 4px 0px;
+    }
+}
+
+.resume {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    .resume-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin {
+            top: 20px;
+            bottom: 20px;
+        }
+        color: $purple;
+    }
+    .resume-item {
+        padding: 0 0 20px 20px;
+        margin-top: -2;
+        border-left: 2px solid $purple;
+        position: relative;
+
+        h4 {
+            line-height: 18px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: $font;
+            color: $color;
+            margin-bottom: 10px;
+        }
+        h5 {
+            font-size: 16px;
+            background: rgb(255, 166, 0);
+            padding: 5px 15px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+            li {
+                padding-bottom: 0;
+            }
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50px;
+            left: -9px;
+            top: 0;
+            background: $color;
+            border: 2px solid $purple;
+        }
+    }
+}
+
+#scroll {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: $color;
+    text-indent: -9999px;
+    display: none;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    z-index: 4;
+}
+#scroll span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -12px;
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #ffffff;
+}
+#scroll:hover {
+    background-color: $purple;
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+}
+/* Shine */
+// .hover14 figure {
+//     position: relative;
+// }
+// .hover14 figure::before {
+//     position: absolute;
+//     top: 0;
+//     left: -75%;
+//     z-index: 2;
+//     display: block;
+//     content: "";
+//     width: 50%;
+//     height: 100%;
+//     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+//     background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+//     -webkit-transform: skewX(-25deg);
+//     transform: skewX(-25deg);
+// }
+// .hover14 figure:hover::before {
+//     -webkit-animation: shine 0.75s;
+//     animation: shine 0.75s;
+// }
+// @-webkit-keyframes shine {
+//     100% {
+//         left: 125%;
+//     }
+// }
+// @keyframes shine {
+//     100% {
+//         left: 125%;
+//     }
+// }
+
+//move over for the scroll button transition all 1s
+.link-buttons {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px;
+    grid-template-rows: 60px;
+    position: fixed;
+    bottom: 5px;
+    fill: $color;
+    right: 0;
+    // display: flex;
+    padding: 0 15px;
+    z-index: 1;
+    transition: all 0.5s;
+}
+svg.bi {
+    fill: $color;
+}
+.circle {
+    border-radius: 50%;
+    // background-color: $color;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    padding: 0;
+    margin: auto;
+    svg {
+        fit-content {
+            height: fit-content;
+            width: fit-content;
+        }
+    }
+}
+
+body {
+    transition: all, 5s;
+}
+
+#slider {
+    width: 720px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    transition: all 1000ms;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px $purple;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 0.2px solid rgba(255, 255, 255, 0.5);
+    border-left: 0.2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+
+    .slides {
+        display: block;
+        width: 6000px;
+        height: 400px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slide {
+        float: left;
+        width: 720px;
+        list-style-type: none;
+        height: 400px;
+        img {
+            width: 720px;
+            height: 400px;
+        }
+    }
+    .slide1 {
+        background: black;
+    }
+    .slide2 {
+        background: black;
+    }
+    .slide3 {
+        background: black;
+    }
+    .slide4 {
+        background: black;
+    }
+    .slide5 {
+        background: black;
+    }
+}
+
+
+.scroll{
+    opacity: 0;
+}
